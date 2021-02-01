@@ -3,13 +3,8 @@ import math
 print('請選擇計算模式(正常:1,弱點:2,耐性:3)')
 mode = int(input())
 
-print('請魔法是否具有屬性(無屬性:1,有屬性:2)')
-element = int(input())
-
-if element == 1:
-    skillmod = 1.4
-elif element == 2:
-    skillmod = 1.3
+print('請輸入技能倍率')
+skillmod = float(input())
 
 DEF = 0
 d1 = []
