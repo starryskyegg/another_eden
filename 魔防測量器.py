@@ -29,7 +29,6 @@ elif element == 2:
 DEF = 0
 d1 = []
 d2 = []
-d3 = []
 print('請輸入傷害值')
 rDMG = int(input())
 for i in range(32,95):
@@ -42,23 +41,15 @@ for i in range(32,95):
 
 k = len(d1)
 while k != 1:
-    j = 0
     print('請輸入傷害值')
     rDMG = int(input())
     for i in range(32,95):
-        while DEF <= MATK*2:
+        for DEF in d1:
             tDMG = math.floor(math.floor(((MATK-DEF/2)*(INT/32+1)*1.75*MOD+MATK*i/25.6)*skillmul)*RST)
             if tDMG == rDMG:
                 d2.append(DEF)
-            DEF+=1
-        DEF = 0
-    while j < len(d1):
-        if d1[j] in d2 :
-            d3.append(d1[j])
-        j+=1
-    d1 = d3
+    d1 = d2
     d2 = []
-    d3 = []
     k = len(d1)
 print('敵方的魔防是'+str(d1[0]))
 input()
