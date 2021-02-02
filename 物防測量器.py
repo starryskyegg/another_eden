@@ -32,7 +32,6 @@ for i in range(16,48):
 
 k = len(d1)
 while k != 1:
-    j = 0
     print('請輸入傷害值')
     rDMG = int(input())
     for i in range(16,48):
