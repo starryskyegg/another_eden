@@ -40,7 +40,7 @@ for i in range(32,95):
     DEF = 0
 
 k = len(d1)
-while k != 1:
+while k != 0 and k != 1:
     print('請輸入傷害值')
     rDMG = int(input())
     for i in range(32,95):
@@ -51,5 +51,8 @@ while k != 1:
     d1 = d2
     d2 = []
     k = len(d1)
-print('敵方的魔防是'+str(d1[0]))
+if k == 0:
+    print('error...')
+elif k == 1:
+    print('敵方的魔防是'+str(d1[0]))
 input()
