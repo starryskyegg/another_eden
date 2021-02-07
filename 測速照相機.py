@@ -1,6 +1,6 @@
 import math
 
-print('請選擇計算模式(正常:1,弱點:2,耐性:3)')
+print('請選擇計算模式(正常:1,弱點:2,耐性:3,吸收:4)')
 mode = int(input())
 
 print('請輸入攻擊數值')
@@ -20,6 +20,8 @@ elif mode == 2:
     RST = (MATK+(2*MATK)**0.5)/512+1.85
 elif mode == 3:
     RST = 0.25
+elif mode == 4:
+    RST = 0.5
 
 d1 = []
 d2 = []
