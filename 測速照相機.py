@@ -64,6 +64,8 @@ elif len(d1) == 1:
                 p.append(eSPD)
         if len(p) == 1:
             print('敵方的速度是'+str(p[0]))
+        elif len(p) == 0:
+            print('error...')
         else:
             print('敵方的速度可能是')
             for eSPD in p:
