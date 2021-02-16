@@ -25,20 +25,31 @@ elif mode == 4:
 
 d1 = []
 d2 = []
-BASE = (ATK-DEF/4)*(PWR/32+1)*3.25*(((10*MATK+16)**0.5-4)/64+1)
 
 print('請輸入傷害值')
 rDMG = int(input())
+if rDMG == 0:
+    print('請輸入無爆擊傷害值')
+    rDMG = int(input())
+    BASE = (ATK-DEF/2)*(PWR/32+1)*1.75*(((10*MATK+16)**0.5-4)/64+1)
+else:
+    BASE = (ATK-DEF/4)*(PWR/32+1)*3.25*(((10*MATK+16)**0.5-4)/64+1)
 for i in range(16,48):
     for M in range(200,1001):
         tDMG = math.floor(math.floor((BASE+ATK*i/25.6)*0.01*M)*RST)
         if tDMG == rDMG:
             d1.append(M)
-
 k = len(d1)
+
 while k != 0 and k != 1:
     print('請輸入傷害值')
     rDMG = int(input())
+    if rDMG == 0:
+        print('請輸入無爆擊傷害值')
+        rDMG = int(input())
+        BASE = (ATK-DEF/2)*(PWR/32+1)*1.75*(((10*MATK+16)**0.5-4)/64+1)
+    else:
+        BASE = (ATK-DEF/4)*(PWR/32+1)*3.25*(((10*MATK+16)**0.5-4)/64+1)
     for i in range(16,48):
         for M in d1:
             tDMG = math.floor(math.floor((BASE+ATK*i/25.6)*0.01*M)*RST)
@@ -79,11 +90,16 @@ elif len(d1) == 1:
             MATK = int(input())
             print('請輸入速度數值')
             SPD = int(input())
-            BASE = (ATK-DEF/4)*(PWR/32+1)*3.25*(((10*MATK+16)**0.5-4)/64+1)
             k = len(p)
             while k != 1:
                 print('請輸入傷害值')
                 rDMG = int(input())
+                if rDMG == 0:
+                    print('請輸入無爆擊傷害值')
+                    rDMG = int(input())
+                    BASE = (ATK-DEF/2)*(PWR/32+1)*1.75*(((10*MATK+16)**0.5-4)/64+1)
+                else:
+                    BASE = (ATK-DEF/4)*(PWR/32+1)*3.25*(((10*MATK+16)**0.5-4)/64+1)
                 for i in range(16,48):
                     for eSPD in p:
                         M = 0.01*math.floor(200*SPD/eSPD)
