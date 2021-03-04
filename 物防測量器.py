@@ -1,4 +1,5 @@
 import math
+import time
 
 print('請選擇計算模式(正常:1,弱點:2,耐性:3,吸收:4)')
 mode = int(input())
@@ -27,21 +28,33 @@ rDMG = int(input())
 if rDMG == 8:
     print('請輸入爆擊傷害')
     rDMG = int(input())
+    start = time.time()
     for i in range(16,48):
         while DEF <= ATK*2:
             tDMG = math.floor(math.floor((ATK-DEF/4)*(PWR/32+1)*3.25+ATK*i/25.6)*RST)
             if tDMG == rDMG:
                 d1.append(DEF)
+                break
+            if tDMG < rDMG:
+                break
             DEF+=1
         DEF = 0
+    end = time.time()
+    #print('runtime',end-start,'sec')
 else:
+    start = time.time()
     for i in range(16,48):
         while DEF <= ATK*2:
             tDMG = math.floor(math.floor((ATK-DEF/2)*(PWR/32+1)*1.75+ATK*i/25.6)*RST)
             if tDMG == rDMG:
                 d1.append(DEF)
+                break
+            if tDMG < rDMG:
+                break
             DEF+=1
         DEF = 0
+    end = time.time()
+    #print('runtime',end-start,'sec')
 
 k = len(d1)
 while k != 0 and k != 1:
@@ -50,6 +63,7 @@ while k != 0 and k != 1:
     if rDMG == 8:
         print('請輸入爆擊傷害')
         rDMG = int(input())
+        start = time.time()
         for i in range(16,48):
             for DEF in d1:
                 tDMG = math.floor(math.floor((ATK-DEF/4)*(PWR/32+1)*3.25+ATK*i/25.6)*RST)
@@ -58,7 +72,10 @@ while k != 0 and k != 1:
         d1 = d2
         d2 = []
         k = len(d1)
+        end = time.time()
+        #print('runtime',end-start,'sec')
     else:
+        start = time.time()
         for i in range(16,48):
             for DEF in d1:
                 tDMG = math.floor(math.floor((ATK-DEF/2)*(PWR/32+1)*1.75+ATK*i/25.6)*RST)
@@ -67,8 +84,9 @@ while k != 0 and k != 1:
         d1 = d2
         d2 = []
         k = len(d1)
+        end = time.time()
+        #print('runtime',end-start,'sec')
 if k == 0:
     print('error...')
 elif k == 1:
-    print('敵方的物防是'+str(d1[0]))
-input()
+    print('敵方的物防是',d1[0])
