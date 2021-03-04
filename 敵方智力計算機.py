@@ -49,12 +49,11 @@ while k != 1 and k != 0:
     match1 = match2
     match2 = []
     end = time.time()
-    print('runtime',end-start,'sec')
     k = len(match1)
+    print('runtime',end-start,'sec')
 
 if k == 0:
   print('error')
 elif k == 1:
   print('敵方的智力是',match1[0][1])
   print('敵方的技能倍率是',match1[0][2]*10,'%')
-input()
