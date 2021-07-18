@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Damage Calculator</title>
+        <style>
+            div.topnav{
+                width:3em;
+                height:1.5em;
+                font-size:1.5em;
+                float:left;
+                text-align:center;
+                background-color: rgba(192, 192, 192, 0.568);
+            }
+            div.topnav:hover{background-color: rgba(192, 192, 192, 1);}
+            div.main{
+                width:600px;
+                height:500px;
+                background-color: grey;
+                display:block;
+                margin-top:3em;
+                left:0;
+                clear:left;
+                display:none ;
+            }
+        </style>
+    </head>
+    <body>
+        <div name='phyPwr' class='topnav'
+        onclick='document.getElementById("phyPwr").style.display="block";
+        document.getElementById("phySpd").style.display="none";
+        document.getElementById("phyItg").style.display="none";
+        document.getElementById("magItg").style.display="none";
+        document.getElementById("magPwr").style.display="none"'>
+        物腕</div>
+        <div name='phySpd' class='topnav'
+        onclick='document.getElementById("phyPwr").style.display="none";
+        document.getElementById("phySpd").style.display="block";
+        document.getElementById("phyItg").style.display="none";
+        document.getElementById("magItg").style.display="none";
+        document.getElementById("magPwr").style.display="none"'>
+        物速</div>
+        <div name='phyItg' class='topnav'
+        onclick='document.getElementById("phyPwr").style.display="none";
+        document.getElementById("phySpd").style.display="none";
+        document.getElementById("phyItg").style.display="block";
+        document.getElementById("magItg").style.display="none";
+        document.getElementById("magPwr").style.display="none"'>
+        物知</div>
+        <div name='magItg' class='topnav'
+        onclick='document.getElementById("phyPwr").style.display="none";
+        document.getElementById("phySpd").style.display="none";
+        document.getElementById("phyItg").style.display="none";
+        document.getElementById("magItg").style.display="block";
+        document.getElementById("magPwr").style.display="none"'>
+        魔知</div>
+        <div name='magPwr' class='topnav'
+        onclick='document.getElementById("phyPwr").style.display="none";
+        document.getElementById("phySpd").style.display="none";
+        document.getElementById("phyItg").style.display="none";
+        document.getElementById("magItg").style.display="none";
+        document.getElementById("magPwr").style.display="block"'>
+        魔腕</div>
+        <div id='phyPwr' class='main' style='display:block'>
+            物腕
+        </div>
+        <div id='phySpd' class='main'>
+            物速
+        </div>
+        <div id='phyItg' class='main'>
+            物知
+        </div>
+        <div id='magItg' class='main'>
+            魔知
+        </div>
+        <div id='magPwr' class='main'>
+            魔腕
+        </div>
+    </body>
+</html>
